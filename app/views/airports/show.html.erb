@@ -1,0 +1,15 @@
+<% @airport = Airport.new %>
+  <% @airport.code = params[:id] %>
+  <h2><%= @airport.code %></h2>
+
+  <p> <%= @airport.temperature %>&degF </p>
+
+  <% if @airport.delay == 0 %>
+  <p>On Time!</p>
+  <% end %>
+
+  <% if @airport.delay > 0 %>
+  <p>Delayed</p>
+  <% end %>
+
+<%= link_to 'Back', airports_url %>
